@@ -1,62 +1,13 @@
 # zxing
 一句话依赖就能实现扫一扫功能，包含闪光灯开关，选取本地图片解析，生成二维码(可带logo)功能等。
 
-更新日志：
-https://github.com/yuzhiqiang1993/zxing/wiki/update-log
 
-博客： http://blog.csdn.net/yuzhiqiang_1993/article/details/78292004
-
-
-扫描二维码下载APK体验一下
-========
-![扫描二维码](https://github.com/yuzhiqiang1993/zxing/blob/master/img/downloadApk.png "扫描下载APK")
-
-
-首先来看看效果图
-========
-
-
-下图分别为 扫描二维码，扫描条码，闪光灯，解析二维码图片，解析条码图片，生成二维码
-------------------------
-![扫描二维码](https://github.com/yuzhiqiang1993/zxing/blob/master/img/scanEwm.gif "扫描二维码")
-![扫描条码](https://github.com/yuzhiqiang1993/zxing/blob/master/img/scanTm.gif "扫描条码")
-![闪光灯](https://github.com/yuzhiqiang1993/zxing/blob/master/img/flashlight.gif "闪光灯")
-![解析二维码图片](https://github.com/yuzhiqiang1993/zxing/blob/master/img/decodeEWM.gif "解析二维码图片")
-![解析条码图片](https://github.com/yuzhiqiang1993/zxing/blob/master/img/decodeTM.gif "解析条码图片")
-![生成二维码图片](https://github.com/yuzhiqiang1993/zxing/blob/master/img/createEwm.gif "生成二维码图片")
-
->
 使用方法
 ========
 
 
 1.添加依赖
---------------------
-先在 build.gradle(Project:XXXX) 的 repositories 添加:
 
-```
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-
-然后在 build.gradle(Module:app) 的 dependencies 添加:
- ```
- dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    
-    /*添加依赖  android studio3.0及以上版本可用implementation代替compile*/
-    compile 'com.github.yuzhiqiang1993:zxing:2.1.0'
-}
-
- 
- ```
- 
  2.申请权限，需要申请的权限有：
  --------------
    ```
@@ -91,9 +42,7 @@ startActivityForResult(intent, REQUEST_CODE_SCAN);
 
 4.接收扫描结果
 -------------------------------------------
-注意：Constant.CODED_CONTENT引的是这个com.yzq.zxinglibrary.common.Constant
 
-```
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -134,10 +83,3 @@ startActivityForResult(intent, REQUEST_CODE_SCAN);
                 } catch (WriterException e) {
                     e.printStackTrace();
                 }
-                
-
-```
->
-
-ok,搞定了，就是这么简单，如果你觉得还行的话，麻烦给个start呦，有什么问题和建议直接提Issues,谢谢。
---------------------------
